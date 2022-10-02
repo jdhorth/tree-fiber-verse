@@ -17,7 +17,7 @@ const Trees: React.FC<props> = ({ boundary, count }) => {
     const [trees, setTrees] = useState<treeType[]>([]);
 
     model.scene.traverse((object) => {
-        if (object.isMesh) {
+        if ((child as Mesh).isMesh) {
             object.castShadow = true;
         }
     });
